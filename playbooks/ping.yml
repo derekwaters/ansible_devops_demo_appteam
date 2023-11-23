@@ -1,0 +1,11 @@
+---
+- name: Do a ping
+  hosts: all
+  collections:
+    - ansible.netcommon
+
+  tasks:
+    - name: Ping the remote host
+      ansible.netcommon.net_ping:
+        dest: "{{ ping_host }}"
+        count: 10
